@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "NER extension",
+    "version": "1.0",
+    "description": "Highlight NER on website",
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
+
